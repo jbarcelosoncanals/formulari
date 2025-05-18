@@ -25,6 +25,19 @@
       border-radius: 12px;
       box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
     }
+<script>
+fetch("https://api.ipify.org?format=json")
+  .then(response => response.json())
+  .then(data => {
+    const ip = data.ip;
+    const bloquejades = ["188.239.153.12"]; // ← posa-hi la IP pública de la xarxa ec_temporal
+    if (bloquejades.includes(ip)) {
+      document.body.innerHTML = "<h1 style='text-align:center; padding-top: 100px;'>Accés no permès des d’aquesta xarxa.</h1>";
+    }
+  })
+  .catch(err => console.log("No s’ha pogut obtenir la IP", err));
+</script>
+
   </style>
 </head>
 <body>
@@ -32,5 +45,6 @@
     <h2>Formulari d’inscripció</h2>
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc3hAdTY0t1TnpNwugUsYbzL_TKqj1eIVoQiKEbQpD3zjf24w/viewform?embedded=true" allowfullscreen></iframe>
   </div>
+
 </body>
 </html>
