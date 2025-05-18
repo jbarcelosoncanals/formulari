@@ -43,7 +43,7 @@ fetch("https://api.ipify.org?format=json")
 <body>
   <div class="container">
     <h2>Formulari d’inscripció</h2>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc3hAdTY0t1TnpNwugUsYbzL_TKqj1eIVoQiKEbQpD3zjf24w/viewform?embedded=true" allowfullscreen></iframe>
+    <iframe src="https://forms.gle/SsFa1TWHkRJh5b2Q6" allowfullscreen></iframe>
   </div>
 
 </body>
