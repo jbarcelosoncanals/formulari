@@ -30,7 +30,7 @@ fetch("https://api.ipify.org?format=json")
   .then(response => response.json())
   .then(data => {
     const ip = data.ip;
-    const bloquejades = ["188.239.153.12"]; // ← posa-hi la IP pública de la xarxa ec_temporal
+    const bloquejades = ["192.168.1.73"]; // ← posa-hi la IP pública de la xarxa ec_temporal
     if (bloquejades.includes(ip)) {
       document.body.innerHTML = "<h1 style='text-align:center; padding-top: 100px;'>Accés no permès des d’aquesta xarxa.</h1>";
     }
