@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulari protegit</title>
+  <script>
+    // Funció que bloqueja l'accés si es detecta una IP prohibida
+    async function comprovarIP() {
+      try {
+        const resposta = await fetch('https://api.ipify.org?format=json');
+        const dades = await resposta.json();
+        const ip = dades.ip;
+
+        // Llista de IPs bloquejades (la de la xarxa "ec_temporal")
+        const ipsBloquejades = ["188.239.153.12"];
+
+        if (ipsBloquejades.includes(ip)) {
+          document.body.innerHTML = "<h1 style='color:red;'>Accés no permès des d’aquesta xarxa</h1>";
+        } else {
+          document.getElementById("formulari").style.display = "block";
+        }
+      } catch (error) {
+        console.error("Error obtenint la IP:", error);
+        document.body.innerHTML = "<h1>Error carregant la pàgina</h1>";
+      }
+    }
+
+    window.onload = comprovarIP;
+  </script>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    iframe {
+      width: 90%;
+      height: 800px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Accés al formulari</h1>
+  <div id="formulari" style="display: none;">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc3hAdTY0t1TnpNwugUsYbzL_TKqj1eIVoQiKEbQpD3zjf24w/viewform?embedded=true" allowfullscreen></iframe>
+  </div>
+</body>
+</html>
