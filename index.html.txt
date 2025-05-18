@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formulari d'inscripció</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      padding: 2rem;
+      text-align: center;
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      max-width: 640px;
+      height: 1000px;
+    }
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Formulari d’inscripció</h2>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc3hAdTY0t1TnpNwugUsYbzL_TKqj1eIVoQiKEbQpD3zjf24w/viewform?embedded=true" allowfullscreen></iframe>
+  </div>
+</body>
+</html>
