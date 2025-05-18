@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formulari d'inscripció</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      padding: 2rem;
+      text-align: center;
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      max-width: 640px;
+      height: 1000px;
+    }
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    }
+<script>
+fetch("https://api.ipify.org?format=json")
+  .then(response => response.json())
+  .then(data => {
+    const ip = data.ip;
+    const bloquejades = ["188.239.153.12"]; // ← posa-hi la IP pública de la xarxa ec_temporal
+    if (bloquejades.includes(ip)) {
+      document.body.innerHTML = "<h1 style='text-align:center; padding-top: 100px;'>Accés no permès des d’aquesta xarxa.</h1>";
+    }
+  })
+  .catch(err => console.log("No s’ha pogut obtenir la IP", err));
+</script>
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Formulari d’inscripció</h2>
+    <iframe src="https://forms.gle/SsFa1TWHkRJh5b2Q6" allowfullscreen></iframe>
+  </div>
+
+</body>
+</html>
